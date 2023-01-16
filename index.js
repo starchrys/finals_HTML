@@ -43,7 +43,7 @@ class Player {
   constructor(){ // Player Position/Width/Height
     this.position = {
       x: 100,
-      y: 100
+      y: 667
     }
     this.velocity = {  // Player Gravity
       x: 0,
