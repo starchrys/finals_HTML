@@ -23,6 +23,11 @@ function img(file){
   const run_right = img('run_right.png');
   const idle_left = img('idle_left.png');
   const run_left = img('run_left.png');
+  const platform_bottom = img('platform_bottom.png');
+  const platform_sblock = img('platform_sblock.png');
+  const platform_upperleft = img('platform_upperleft.png');
+  const platform_upperright = img('platform_upperright.png');
+  const platform_zblock = img('platform_zblock.png');
 
 //Declaring variables
 const gravity = 0.5; //Global Gravity
@@ -43,7 +48,7 @@ class Player {
   constructor(){ // Player Position/Width/Height
     this.position = {
       x: 100,
-      y: 100
+      y: 667
     }
     this.velocity = {  // Player Gravity
       x: 0,
