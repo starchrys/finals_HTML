@@ -349,7 +349,7 @@ function keyDown(event){
 
 function keyUp(event){
   if(event.code == "ArrowUp"){
-      player.velocity.y -= 10;
+      player.velocity.y -= 5;
   }
 
   if(event.code == "ArrowLeft"){
