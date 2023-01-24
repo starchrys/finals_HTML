@@ -23,6 +23,8 @@ function img(file){
   const run_right = img('run_right.png');
   const idle_left = img('idle_left.png');
   const run_left = img('run_left.png');
+  const platform_small = img('platform_small.png');
+  const platform_med = img('platform_medium.png');
   const platform_bottom = img('platform_bottom.png');
   const platform_sblock = img('platform_sblock.png');
   const platform_upperleft = img('platform_upperleft.png');
@@ -145,16 +147,7 @@ class Decoration {
 
 //Declaring variables
 let player = new Player();
-let platforms = [new Platform({
-  x: -1,
-  y: 800,
-  image: platformImg
-}),
-  new Platform({
-    x: 600 -1,
-    y: 800,
-    image: platformImg
-  })]
+let platforms = []
 let decorations = [
   new Decoration({
     x:0,
@@ -203,11 +196,6 @@ let levels = {
         x: -1,
         y: 800,
         image: platformImg
-      }),
-      new Platform({
-        x: 600 -1,
-        y: 800,
-        image: platformImg
       })]
       decorations = [
         new Decoration({
@@ -242,12 +230,12 @@ let levels = {
 }
 
 
-function drawSplash(){
-  splash.onload = function(){
-    ctx.clearRect( 0, 0, ctx.canvas.width, ctx.canvas.height );
-    ctx.drawImage(splash, 0, 0, ctx.canvas.width, ctx.canvas.height);
-  };
-}
+// function drawSplash(){
+//   splash.onload = function(){
+//     ctx.clearRect( 0, 0, ctx.canvas.width, ctx.canvas.height );
+//     ctx.drawImage(splash, 0, 0, ctx.canvas.width, ctx.canvas.height);
+//   };
+// }
 
 
 function gameStart(){
@@ -264,9 +252,9 @@ function animate(){ // Animate
   ctx.fillStyle = 'white';
   ctx.fillRect(0,0,canvas.width, canvas.height)
  
-  decorations.forEach(Decoration =>{
-    Decoration.draw();
-  });
+  // decorations.forEach(Decoration =>{
+  //   Decoration.draw();
+  // });
 
   platforms.forEach(platform =>{
     platform.draw();
@@ -368,4 +356,4 @@ function keyUp(event){
     player.currentFrameLimit = player.sprites.idle.frameLimit;
   }
 }
-drawSplash();
+gameStart();
